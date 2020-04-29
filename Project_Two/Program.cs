@@ -12,8 +12,8 @@ namespace Project_Two
             * or guide them through generating the file.
             **/
             //DECLARATIONS
-            const string PATH = @"C:\CWEB 2010\Project2.1\Super_Bowl_Project.csv";
-
+            const string PATH = @"C:\CWEB2010\Project_Two\Super_Bowl_Project.csv";
+        
 
             //FileStream input;
             //StreamReader read;
