@@ -35,7 +35,7 @@ namespace Project_Two
 
                     //Reading records and creating object instances at the same time.
                     data = read.ReadLine().Split(',');
-                    prospectList.Add(new Prospective_Player(data[0], Convert.ToInt32(data[1], data[2], data[3], data[4], Convert.ToDouble(data[5]))));//Adding objects to the end of the list, using ToDouble to convert number to a double floating point.
+                    prospectList.Add(new Prospective_Player(data[0], Convert.ToInt32(data[1]), data[2], data[3], data[4], Convert.ToDouble(data[5])));//Adding objects to the end of the list, using ToDouble to convert number to a double floating point.
                     Console.WriteLine(prospectList[prospectList.Count - 1]);// Writing and getting the number of elements contained in the list
 
                 }
@@ -59,7 +59,7 @@ namespace Project_Two
             foreach (Prospective_Player y in prospectList)
             {
                 //Writing out the record
-                write.WriteLine($"{y.TeamName}, {y.YearTeamWon}, {y.WinningQuaterback}, {y.WinningCoach}, {y.TheMVP}, {y.PtDifferenceBetweenWinningAndLosingTeam.ToDouble}");
+                write.WriteLine($"{y.TeamName}, {y.YearTeamWon}, {y.WinningQuarterBack}, {y.WinningCoach}, {y.TheMVP}, {y.PtDifferenceBetweenWinningAndLosingTeam}");
                 
 
             }
@@ -75,6 +75,9 @@ namespace Project_Two
     //Creating a class object for Prospective_Player used in the foreach loop
     class Prospective_Player
     {
+        private string v1;
+        private int v2;
+
         //Using the getter and setter method.
 
         public string TeamName { get; set; }
@@ -93,5 +96,7 @@ namespace Project_Two
             TheMVP = theMVP;
             PtDifferenceBetweenWinningAndLosingTeam = ptDifferenceBetweenWinningAndLosingTeam;
         }
+
+      
     }
 }
