@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Project_Two
 {
@@ -12,8 +13,8 @@ namespace Project_Two
             * or guide them through generating the file.
             **/
             //DECLARATIONS
-            const string PATH = @"C:\CWEB2010\Project_Two\Super_Bowl_Project.csv";
-        
+             string PATH = @"C:\Users\checheb\Desktop\csv\Super_Bowl_Project.csv";
+       
 
             //FileStream input;
             //StreamReader read;
@@ -35,7 +36,7 @@ namespace Project_Two
 
                     //Reading records and creating object instances at the same time.
                     data = read.ReadLine().Split(',');
-                    prospectList.Add(new Prospective_Player(data[0], Convert.ToInt32(data[1]), data[2], data[3], data[4], Convert.ToDouble(data[5])));//Adding objects to the end of the list, using ToDouble to convert number to a double floating point.
+                    prospectList.Add(new Prospective_Player(data[0], Convert.ToInt32(data[1]), data[2], data[3], data[4], Convert.ToDouble(data[5]))); //Adding objects to the end of the list, using ToDouble to convert number to a double floating point.
                     Console.WriteLine(prospectList[prospectList.Count - 1]);// Writing and getting the number of elements contained in the list
 
                 }
@@ -96,6 +97,8 @@ namespace Project_Two
             TheMVP = theMVP;
             PtDifferenceBetweenWinningAndLosingTeam = ptDifferenceBetweenWinningAndLosingTeam;
         }
+
+        //LINQ Query Syntax to generate a list of superbowl winners using the query syntax
 
         public override string ToString()
         {
