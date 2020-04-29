@@ -24,7 +24,7 @@ namespace Project_Two
             //Implementation of try catch error method 
             try
             {
-                FileStream input = new FileStream(PATH, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                FileStream input = new FileStream(PATH, FileMode.Open, FileAccess.Read);
                 StreamReader read = new StreamReader(input);
                 line = read.ReadLine(); // Priming input
                 prospectList = new List<Prospective_Player>();
@@ -52,7 +52,7 @@ namespace Project_Two
 
             //Writing to file
 
-            FileStream output = new FileStream(PATH, FileMode.OpenOrCreate, FileAccess.ReadWrite);// Initializing a new instance of the file with read and write permision.
+            FileStream output = new FileStream(PATH, FileMode.Create, FileAccess.Write);// Initializing a new instance of the file with read and write permision.
             StreamWriter write = new StreamWriter(output);
             write.WriteLine("Team name, Year team won, Winning Quaterback, Winning Coach, The MVP, Pt difference between winning and losing team");
             //Creating a for each loop 
@@ -97,6 +97,9 @@ namespace Project_Two
             PtDifferenceBetweenWinningAndLosingTeam = ptDifferenceBetweenWinningAndLosingTeam;
         }
 
-      
+        public override string ToString()
+        {
+            return String.Format($"Welcome, Data: Team Name{TeamName}, Year Team Won{YearTeamWon}, Winning Quarterback{WinningQuarterBack}, Winning Coach{WinningCoach}, The MVP{TheMVP},The point difference{PtDifferenceBetweenWinningAndLosingTeam}");
+        }
     }
 }
